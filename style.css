@@ -20,17 +20,62 @@
   color: white;
 }
 
-body {
+
+body :not(.blink_me){
+
   font-family: "Noto Sans";
-  margin:0;
+
+
+  animation: colorRotate 2s linear 0s infinite, spin 2s linear infinite;
 }
 
 a {
-    color: #3391ff;
+
+  font-family: "Noto Sans";
+
+
+  animation: colorRotate 2s linear 0s infinite, spin 2s linear infinite;
+}
+.blink_me {
+  font-size:100px;
+  animation: blinker 0.08s linear infinite;
+  transform: translateX(25%); translateY(80%);
+
 }
 
+@keyframes blinker {
+  from {color:red;}
+  50% {
+    opacity: 0;
+    color:green;
+    font-size: 105px;
+  }
+}
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+    transform:rotate(0deg);
+  }
+  25% {
+    color: #0099ff;
+    transform:rotate(90deg);
+  }
+  50% {
+    color: #00ff00;
+    transform:rotate(180deg);
+  }
+  75% {
+    color: #ff3399;
+    transform:rotate(270deg);
+  }
+  100% {
+    color: #6666ff;
+    transform:rotate(360deg);
+  }
+}
 button {
   border-color: #736b5e;
   color: #e8e6e3;
   background-color: #181a1b;
 }
+
